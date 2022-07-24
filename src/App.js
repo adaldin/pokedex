@@ -1,6 +1,6 @@
 // React
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect, useState } from "react";
+
 // Components
 import PokemonsList from "./components/PokemonsList";
 import PokeDetail from "./components/PokeDetail";
