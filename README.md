@@ -8,10 +8,10 @@ Pokedex es una app para ver, buscar y conocer en detalle Pokemons.
 npm start
 ```
 
+## Tecnologies
+
+React, Bootstrap, React-Router @v6.
+
 ## Contributing
 
-Basada en la API RESTfull de [PokeApi](https://pokeapi).
-
-## Contributing
-
-Pull son bienvenidos.
+Basada en la API RESTfull de [PokeApi](https://pokeapi). Pull son bienvenidos.
