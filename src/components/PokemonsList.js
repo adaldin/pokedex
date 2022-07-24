@@ -69,9 +69,14 @@ function PokemonsList() {
     setFilteredPokemons(filteredNames);
   }
 
-  function filterByType(e) {
+  async function filterByType(e) {
     const { name } = e.target;
-    const filteredtypes = pokemons.filter((p) => p.url === name);
+    const filteredtypes = pokemons.filter(async (p) => {
+      const r = await fetch(`https://pokeapi.co/api/v2/pokemon/${p.name}`);
+      const d = await r.json();
+      console.log(d);
+      return d;
+    });
     console.log(filteredtypes);
   }
 
