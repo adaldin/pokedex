@@ -57,6 +57,7 @@ function PokemonsList() {
   async function getTypes() {
     const r = await fetch(" https://pokeapi.co/api/v2/type/");
     const d = await r.json();
+
     setTypes(d.results);
     setLoadingTypes(false);
   }
@@ -71,12 +72,14 @@ function PokemonsList() {
 
   async function filterByType(e) {
     const { name } = e.target;
-    const filteredtypes = pokemons.filter(async (p) => {
-      const r = await fetch(`https://pokeapi.co/api/v2/pokemon/${p.name}`);
-      const d = await r.json();
-      console.log(d);
-      return d;
-    });
+    const filteredtypes = await Promise.all(
+      pokemons.map(async (p) => {
+        const r = await fetch(`${p.url}`);
+        const d = await r.json();
+        console.log(d);
+        return d;
+      })
+    );
     console.log(filteredtypes);
   }
 
