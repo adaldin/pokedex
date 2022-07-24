@@ -15,19 +15,21 @@ function PokemonsList() {
   const [types, setTypes] = useState({});
   const [loadingTypes, setLoadingTypes] = useState(true);
   const [pokemons, setPokemons] = useState([]);
-  const [filteredPokemons, setFilteredPokemons] = useState([...pokemons]);
+  const [filteredPokemons, setFilteredPokemons] = useState([]);
   const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon");
   const [next, setNext] = useState("");
   const [prev, setPrev] = useState("");
 
   // -----Effects:
   useEffect(() => {
+    getTypes();
+  }, []);
+
+  useEffect(() => {
     getPokemons(); // eslint-disable-next-line
   }, [url]);
 
-  useEffect(() => {
-    getTypes();
-  }, []);
+  useEffect(() => {}, []);
 
   // -----Logic:
   async function getPokemons() {
@@ -35,6 +37,7 @@ function PokemonsList() {
       const r = await fetch(url);
       const d = await r.json();
       setPokemons(d.results);
+      setFilteredPokemons(d.results);
       setNext(d.next);
       setPrev(d.previous);
     } catch (err) {
@@ -59,19 +62,25 @@ function PokemonsList() {
   }
 
   function filterByName(e) {
-    console.log(e);
-    // const { value } = e.target;
-    // const filteredNames = props.pokemons.filter((p) =>
-    //   p.name.startsWith(value)
-    // );
-    // props.setFilteredPokemon(filteredNames);
+    const { value } = e.target;
+    const filteredNames = pokemons.filter((p) =>
+      p.name.startsWith(value.toLowerCase())
+    );
+    setFilteredPokemons(filteredNames);
   }
+
+  function filterByType(e) {
+    const { name } = e.target;
+    const filteredtypes = pokemons.filter((p) => p.url === name);
+    console.log(filteredtypes);
+  }
+
   return (
     <Container>
       <Row as={Form} className="gap-2">
         <Col xs={12}>
           <input
-            placeholder="Find your pokemon"
+            placeholder="Find your pokemon by name"
             className="w-100"
             onChange={filterByName}
           />
@@ -85,7 +94,8 @@ function PokemonsList() {
                 className="me-2 mb-2"
                 variant="outline-dark"
                 key={i}
-                name={type}
+                name={type.name}
+                onClick={filterByType}
               >
                 {type.name}
               </Button>
@@ -94,7 +104,7 @@ function PokemonsList() {
         </Col>
       </Row>
       <Row className=" justify-content-center align-items-center my-4">
-        {pokemons.map((pokemon, index) => (
+        {filteredPokemons.map((pokemon, index) => (
           <Col
             as={Link}
             to={`/${pokemon.name}`}
