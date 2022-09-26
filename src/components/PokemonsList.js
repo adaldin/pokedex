@@ -9,6 +9,7 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 // Components
 import PokeItem from "./PokeItem";
+import logo from "../assets/Pokemon-Logo.png";
 
 function PokemonsList() {
   // -----States:
@@ -85,6 +86,11 @@ function PokemonsList() {
 
   return (
     <Container>
+      <Row>
+        <div className="d-flex justify-content-center">
+          <img src={logo} style={{ width: "400px" }} />
+        </div>
+      </Row>
       <Row as={Form} className="gap-2">
         <Col xs={12}>
           <input
