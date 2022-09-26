@@ -1,33 +1,43 @@
-# Pokedex
+<div id="header" align="center">
+  <img src="user-images.githubusercontent.com/18453013/192341681-8de399a1-078d-4b17-b19c-58585c412a12.gif"/>
+</div>
 
-Pokedex és una app para veure, cercar y conèixer en detall els Pokemons de la API [PokeApi](https://pokeapi).
+--------------------------------------------------
+# Pokemon Cards
+A website to find your favourite pokemon and a detail page of each one. Working with the POKE-API [PokeApi](https://pokeapi), builded in React, implementing React-Bootstrap, React-Router-v6.
+> *Remember my super cool Rattata? My Rattata is different from regular Rattata. It’s like my Rattata is in the top percentage of all Rattata.*
 
-## Usage
+## Find your favourite Pokemon🫶
+Take a look on the web and filter by page or search the pokemon on the searcher bar
+<div align="center">
+  <a href="https://tetrispractice.netlify.app" target="blank">
+   <img src="https://user-images.githubusercontent.com/18453013/192245542-8cd4a916-6658-45a7-99c0-b432ec9fd838.gif" /></a>
+</div>
 
-Només has de clonar el fitxer, obrir la consola en Visual Studio i començar la App de React con el siguiente comando:
+## Builded with ⚙️
+<div>
+<img src="https://img.icons8.com/color/48/000000/react-native.png"/>
+<img src="https://img.icons8.com/color/48/000000/bootstrap.png"/>
+  <img src="https://img.icons8.com/color/48/000000/git.png"/>
+  <img src="https://img.icons8.com/external-xnimrodx-lineal-gradient-xnimrodx/64/000000/external-responsive-responsive-design-xnimrodx-lineal-gradient-xnimrodx.png"/>
+    </div>  
 
-```js
-npm start
-```
+## Roadmap 🗺️
+Upcoming features on this project:
+* Fix buttons to filter pokemons
+* Add a Login page to save favourites
 
-## Project Requirements
 
--Ser capaç de fer peticions de manera satisfactòria a l'API i obtenir les dades que es vulguin mostrar a l'usuari
+## Contributing 🤝
+ Any suggestion is more than welcome & greatly appreciated! ❤️
+ Feel free to follow next steps in order to contribute to this project
+ 
+1. Fork the Project 
+2. Create your Feature Branch (git checkout -b feature/AmazingFeature) 
+3. Commit your Changes (git commit -m 'Add some AmazingFeature')
+4. Push to the Branch (git push origin feature/AmazingFeature)
+5. Open a Pull Request
 
--Utilitzar les dades per crear components de la web i mostrar-los a lusuari, el disseny és lliure.
+## Author ✍️
+[@adaldin](http://github.com/adaldin)
 
--En fer clic a una de les cartes hauríem de navegar a una altra ruta on obtenir una mica d'informació extra del que sigui que s'hagi clicat a la pàgina principal, allò que mostrar també és lliure escollir.
-
--La vista que aparegui a partir del clic a les cartes, ha de tenir un botó per tornar a la pàgina principal
-
--Implementar una manera de filtrar les dades
-
--Implementar una barra de cerca
-
-## Tecnologies
-
-React, Bootstrap, React-Router @v6.
-
-## Contributing
-
-Basada en la API RESTfull de [PokeApi](https://pokeapi). Tots els pull request són benvinguts.
