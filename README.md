@@ -10,7 +10,7 @@ A website to find your favourite pokemon and a detail page of each one. Working 
 ## Find your favourite Pokemon🫶
 Take a look on the web and filter by page or search the pokemon on the searcher bar
 <div align="center">
-  <a href="https://tetrispractice.netlify.app" target="blank">
+  <a href="https://pokedexcards.herokuapp.com" target="blank">
    <img src="https://user-images.githubusercontent.com/18453013/192347394-be59469e-37b3-4ef2-b1c2-ccacb3397475.gif" /></a>
 </div>
 
